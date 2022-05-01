@@ -6,5 +6,8 @@ import org.springframework.stereotype.Repository;
 
 //CRUD함수를 JpaRepository가 들고 잇음
 //@Repository라는 어노테이션이 없어도 IOC가 된다...? 이유는 JpaRepository가 가지고 있기 때문에...?
+@Repository
 public interface UserRepository extends JpaRepository<User, Integer> {
+    //select * from user where username = 1?
+    public User findByUsername(String username);
 }
